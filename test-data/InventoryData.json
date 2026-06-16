@@ -1,0 +1,77 @@
+[
+  {
+    "category": "Product Display - Grid View",
+    "scenario": "Verify all six catalog items display correct names, images, descriptions, and prices",
+    "expectedItemCount": 6,
+    "run": "yes"
+  },
+  {
+    "category": "Product Display - Click Actions",
+    "scenario": "Verify clicking a product title redirects the user to its dedicated detailed item page",
+    "itemToClick": "Sauce Labs Backpack",
+    "expectedUrlSnippet": "/inventory-item.html?id=4",
+    "run": "yes"
+  },
+  {
+    "category": "Shopping Cart - Add Actions",
+    "scenario": "User adds a single item to the cart and the shopping cart badge increments to 1",
+    "itemsToAdd": ["Sauce Labs Backpack"],
+    "expectedBadgeCount": "1",
+    "run": "yes"
+  },
+  {
+    "category": "Shopping Cart - Add Actions",
+    "scenario": "User adds multiple items to the cart and the badge tracks the total count accurately",
+    "itemsToAdd": ["Sauce Labs Backpack", "Sauce Labs Bike Light", "Sauce Labs Bolt T-Shirt"],
+    "expectedBadgeCount": "3",
+    "run": "yes"
+  },
+  {
+    "category": "Shopping Cart - Remove Actions",
+    "scenario": "User removes an item directly from the inventory grid and the cart badge decreases",
+    "itemsToAdd": ["Sauce Labs Backpack", "Sauce Labs Bike Light"],
+    "itemsToRemove": ["Sauce Labs Backpack"],
+    "expectedBadgeCount": "1",
+    "run": "yes"
+  },
+  {
+    "category": "Shopping Cart - Remove Actions",
+    "scenario": "User removes the last item from the cart and the badge element disappears entirely",
+    "itemsToAdd": ["Sauce Labs Backpack"],
+    "itemsToRemove": ["Sauce Labs Backpack"],
+    "expectedBadgeCount": "hidden",
+    "run": "yes"
+  },
+  {
+    "category": "Sorting Filters - Alphabetical",
+    "scenario": "User sorts products by Name from A to Z",
+    "sortOption": "az",
+    "expectedFirstItem": "Sauce Labs Backpack",
+    "expectedLastItem": "Test.allTheThings() T-Shirt (Red)",
+    "run": "yes"
+  },
+  {
+    "category": "Sorting Filters - Alphabetical",
+    "scenario": "User sorts products by Name from Z to A",
+    "sortOption": "za",
+    "expectedFirstItem": "Test.allTheThings() T-Shirt (Red)",
+    "expectedLastItem": "Sauce Labs Backpack",
+    "run": "yes"
+  },
+  {
+    "category": "Sorting Filters - Numeric Price",
+    "scenario": "User sorts products by Price from Low to High",
+    "sortOption": "lohi",
+    "expectedFirstItem": "Sauce Labs Onesie",
+    "expectedLastItem": "Sauce Labs Fleece Jacket",
+    "run": "yes"
+  },
+  {
+    "category": "Sorting Filters - Numeric Price",
+    "scenario": "User sorts products by Price from High to Low",
+    "sortOption": "hilo",
+    "expectedFirstItem": "Sauce Labs Fleece Jacket",
+    "expectedLastItem": "Sauce Labs Onesie",
+    "run": "yes"
+  }
+]

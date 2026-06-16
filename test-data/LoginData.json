@@ -1,0 +1,102 @@
+[
+  {
+    "category": "Positive Cases - Happy Path",
+    "scenario": "User enters correct credentials and logs in successfully",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expected": "success",
+    "errorMessageText": "",
+    "run": "yes"
+  },
+  {
+    "category": "Positive Cases - Special User Profiles",
+    "scenario": "User with profile loading issues logs in successfully",
+    "username": "problem_user",
+    "password": "secret_sauce",
+    "expected": "success",
+    "errorMessageText": "",
+    "run": "yes"
+  },
+  {
+    "category": "Positive Cases - Special User Profiles",
+    "scenario": "User experiences deliberate network delay during login",
+    "username": "performance_glitch_user",
+    "password": "secret_sauce",
+    "expected": "success",
+    "isDelayed": true,
+    "errorMessageText": "",
+    "run": "yes"
+  },
+  {
+    "category": "Positive Cases - Special User Profiles",
+    "scenario": "User logs in with alternative visual UI configuration",
+    "username": "visual_user",
+    "password": "secret_sauce",
+    "expected": "success",
+    "errorMessageText": "",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - Account Restrictions",
+    "scenario": "Suspended user attempts to log in and is blocked",
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "expected": "error",
+    "errorMessageText": "Epic sadface: Sorry, this user has been locked out.",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - System Bugs (SauceDemo Specific)",
+    "scenario": "User profile with underlying API errors triggers failure",
+    "username": "error_user",
+    "password": "secret_sauce",
+    "expected": "success",
+    "errorMessageText": "",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - Missing Credentials",
+    "scenario": "User forgets to enter their username",
+    "username": "",
+    "password": "secret_sauce",
+    "expected": "error",
+    "errorMessageText": "Epic sadface: Username is required",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - Missing Credentials",
+    "scenario": "User forgets to enter their password",
+    "username": "standard_user",
+    "password": "",
+    "expected": "error",
+    "errorMessageText": "Epic sadface: Password is required",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - Missing Credentials",
+    "scenario": "User clicks login with completely empty fields",
+    "username": "",
+    "password": "",
+    "expected": "error",
+    "errorMessageText": "Epic sadface: Username is required",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - Invalid Credentials",
+    "scenario": "User inputs a typo in their password",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expected": "error",
+    "errorMessageText": "Epic sadface: Username and password do not match any user in this service",
+    "run": "yes"
+  },
+  {
+    "category": "Negative Cases - Invalid Credentials",
+    "scenario": "Unregistered person tries to log into the application",
+    "username": "non_existent_user",
+    "password": "secret_sauce",
+    "expected": "error",
+    "errorMessageText": "Epic sadface: Username and password do not match any user in this service",
+    "run": "yes"
+  }
+]

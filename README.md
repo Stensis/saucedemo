@@ -83,7 +83,7 @@ Ensure that Node.js (v18 or higher) is installed on your local operating environ
 
 1. Clone the Repository
 ```
-git clone [https://github.com/YOUR_USERNAME/saucedemo_testing.git](https://github.com/YOUR_USERNAME/saucedemo_testing.git)
+git clone https://git@github.com:Stensis/saucedemo.git
 ```
 ```
 cd saucedemo_testing

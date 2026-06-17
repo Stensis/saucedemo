@@ -1,0 +1,70 @@
+[
+  {
+    "category": "Cart Details - Verification",
+    "scenario": "Verify selected items, prices, and quantities carry over accurately to the cart details page",
+    "itemsToVerify": [
+      { "name": "Sauce Labs Backpack", "price": "$29.99", "quantity": "1" },
+      { "name": "Sauce Labs Bike Light", "price": "$9.99", "quantity": "1" }
+    ],
+    "run": "yes"
+  },
+  {
+    "category": "Checkout Form - Validation",
+    "scenario": "User leaves First Name blank and receives a validation error",
+    "firstName": "",
+    "lastName": "Doe",
+    "postalCode": "12345",
+    "expectedError": "Error: First Name is required",
+    "run": "yes"
+  },
+  {
+    "category": "Checkout Form - Validation",
+    "scenario": "User leaves Last Name blank and receives a validation error",
+    "firstName": "Jane",
+    "lastName": "",
+    "postalCode": "12345",
+    "expectedError": "Error: Last Name is required",
+    "run": "yes"
+  },
+  {
+    "category": "Checkout Form - Validation",
+    "scenario": "User leaves Postal Code blank and receives a validation error",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "postalCode": "",
+    "expectedError": "Error: Postal Code is required",
+    "run": "yes"
+  },
+
+  {
+    "category": "Checkout Summary - Financial Calculations",
+    "scenario": "Verify Item Total, Tax calculation, and Grand Total are mathematically accurate",
+    "itemsToPurchase": ["Sauce Labs Backpack", "Sauce Labs Onesie"],
+    "firstName": "Financial",
+    "lastName": "Tester",
+    "postalCode": "99999",
+    "expectedItemTotal": "Item total: $37.98",
+    "expectedTax": "Tax: $3.04",
+    "expectedTotal": "Total: $41.02",
+    "run": "yes"
+  },
+  {
+    "category": "Checkout Flow - Navigational Safeguards",
+    "scenario": "User aborts checkout via Cancel button and is safely returned to the cart page",
+    "itemsToPurchase": ["Sauce Labs Backpack"],
+    "actionToPerform": "cancel",
+    "expectedUrlSnippet": "/inventory.html",
+    "run": "yes"
+  },
+  {
+    "category": "Checkout Flow - Complete Order E2E",
+    "scenario": "User submits valid checkout details and successfully completes the order workflow",
+    "itemsToPurchase": ["Sauce Labs Backpack", "Sauce Labs Bolt T-Shirt"],
+    "firstName": "John",
+    "lastName": "Doe",
+    "postalCode": "90210",
+    "expectedHeader": "Thank you for your order!",
+    "expectedText": "Your order has been dispatched, and will arrive just as fast as the pony can get there!",
+    "run": "yes"
+  }
+]
